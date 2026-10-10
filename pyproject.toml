@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corbit-docs-pdf"
+version = "0.1.0"
+description = "Universal documentation PDF compiler with Mermaid, Chrome, and JSON manifest support"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Corbit Technologies" }
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Topic :: Documentation",
+]
+dependencies = [
+    "markdown>=3.6",
+    "pymupdf>=1.24.0"
+]
+
+[project.scripts]
+docs2pdf = "corbit_docs_pdf.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["corbit_docs_pdf*"]
